@@ -36,7 +36,7 @@ router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
 })
 
 router.get('/:id', async (req: AuthRequest, res: Response): Promise<void> => {
-  const lessonId = parseInt(req.params.id)
+  const lessonId = parseInt(req.params['id'] as string)
 
   try {
     const lesson = await prisma.lesson.findUnique({

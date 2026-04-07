@@ -7,7 +7,7 @@ const router = Router()
 router.use(authMiddleware)
 
 router.post('/:lessonId/submit', async (req: AuthRequest, res: Response): Promise<void> => {
-  const lessonId = parseInt(req.params.lessonId)
+  const lessonId = parseInt(req.params['lessonId'] as string)
   const { answers } = req.body as { answers: Record<string, string> }
   const userId = req.user!.id
 
