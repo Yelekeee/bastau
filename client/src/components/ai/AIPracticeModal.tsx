@@ -68,7 +68,7 @@ export default function AIPracticeModal() {
               <div className="flex items-center gap-2">
                 <ChatBubbleLeftRightIcon className="h-5 w-5 text-teal-600" />
                 <span className="font-semibold text-gray-900">AI Практика</span>
-                <span className="text-xs text-gray-500">казахский с Claude</span>
+                <span className="text-xs text-gray-500">казахский</span>
               </div>
               <button
                 onClick={() => setOpen(false)}

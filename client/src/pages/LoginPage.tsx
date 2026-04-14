@@ -18,9 +18,8 @@ export default function LoginPage() {
       await login(email, password)
       navigate('/course')
     } catch (err: unknown) {
-      const msg =
-        err instanceof Error ? err.message : 'Ошибка входа. Проверьте email и пароль.'
-      setError(msg)
+      const axiosErr = err as { response?: { data?: { error?: string } } }
+      setError(axiosErr?.response?.data?.error ?? 'Ошибка входа. Проверьте email и пароль.')
     } finally {
       setLoading(false)
     }
